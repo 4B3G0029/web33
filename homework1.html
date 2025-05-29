@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>花卉介紹</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    img {
+      width: 200px;
+      height: auto;
+      margin-top: 20px;
+    }
+    .description {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>花卉介紹</h1>
+  <button onclick="showFlower(1)">繡球花</button>
+  <button onclick="showFlower(2)">櫻花</button>
+
+  <div>
+    <img id="flowerImage" src="d25793fb-1c23-426e-a1f4-5668fdd5c19c.jpg" alt="花卉圖片">
+  </div>
+
+  <div class="description" id="flowerDescription">
+    繡球花色彩豔麗，花瓣層層堆疊，花期長，常見於春夏季節，象徵希望與團圓，適合園藝觀賞。
+  </div>
+
+  <script>
+    function showFlower(id) {
+      const image = document.getElementById('flowerImage');
+      const description = document.getElementById('flowerDescription');
+
+      if (id === 1) {
+        image.src = 'd25793fb-1c23-426e-a1f4-5668fdd5c19c.jpg';
+        description.innerText = '繡球花色彩豔麗，花瓣層層堆疊，花期長，常見於春夏季節，象徵希望與團圓，適合園藝觀賞。';
+      } else if (id === 2) {
+        image.src = 'article-67a5751b8a7ca.jpg';
+        description.innerText = '櫻花為春天代表花卉，花色粉嫩，盛開時如雲似雪，象徵美麗與短暫，深受人們喜愛。';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>甜點選擇</title>
+</head>
+<body>
+  <h3>請選擇你喜歡的甜點：</h3>
+
+  <form id="dessertForm">
+    <label><input type="radio" name="dessert" value="馬卡龍"> 馬卡龍</label>
+    <label><input type="radio" name="dessert" value="舒芙蕾"> 舒芙蕾</label>
+    <label><input type="radio" name="dessert" value="蘋果派"> 蘋果派</label>
+    <label><input type="radio" name="dessert" value="水果塔"> 水果塔</label>
+    <br><br>
+    <button type="button" onclick="submitDessert()">送出</button>
+    <button type="button" onclick="resetForm()">重設</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function submitDessert() {
+      const desserts = document.getElementsByName('dessert');
+      let selected = '';
+      for (let i = 0; i < desserts.length; i++) {
+        if (desserts[i].checked) {
+          selected = desserts[i].value;
+          break;
+        }
+      }
+
+      alert("選擇的是：" + selected);
+      document.getElementById("result").innerText = "你選擇的是：" + selected;
+    }
+
+    function resetForm() {
+      // 重設表單
+      document.getElementById("dessertForm").reset();
+
+      // 清除結果顯示
+      document.getElementById("result").innerText = "";
+    }
+  </script>
+</body>
+</html>
